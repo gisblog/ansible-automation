@@ -1,1 +1,3 @@
 # aws
+# azure
+# gcp
