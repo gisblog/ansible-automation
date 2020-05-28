@@ -20,7 +20,7 @@
 $ aws s3 ls --profile gisblog --region us-east-1
 # list file(s):
 $ aws s3 ls s3://bucket0test/ --profile gisblog --region us-east-1
-# copy: -acl public-read-write for public r/w
+# copy: --acl public-read-write for public r/w
 $ aws s3 cp file.zip s3://bucket0test/ --profile gisblog --region us-east-1
 # ..or..
 $ aws s3 cp file.zip s3://bucket0test/file.zip --profile gisblog --region us-east-1
