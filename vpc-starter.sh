@@ -12,6 +12,14 @@
 #   |_ROUTE TABLE
 #   |_SUBNET (must reside in 1 AZ)
 #     |_EC2
+
+# Use Transit Gateway which uses VPC attachment (n-to-1-to-n hub-and-spoke model) to route traffic between VPCs internally (and not over the internet).
+
+# Typical AWS to On-prem Connection:
+# [AWS] <-VPG-CustomerGateway-> [On-prem]
+# or
+# [AWS] <-VPG-DirectConnect-CustomerGateway-> [On-prem]
+# * Direct Connect is not redundant. Use VPN.
 ###
 
 # vpc starter #
