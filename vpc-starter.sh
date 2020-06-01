@@ -1,4 +1,20 @@
-VPC Starter:
+###
+# AWS CLOUD
+# |_AWS REGION (eg us-east-1)
+#   |_AZ1 (eg us-east-1a)
+# |_DATA CENTER 1...
+#   |_AZ2 (eg us-east-1b)
+# |_DATA CENTER 1...
+# |_VPC (can span multiple AZs)
+#   |_ELB
+#   |_INTERNET GATEWAY (to make subnet public)
+#   |_(NAT GATEWAY INSTANCE or SERVICE (ec2 traffic forwarder, self-managed or aws-managed. for private subnet to access internet)
+#   |_ROUTE TABLE
+#   |_SUBNET (must reside in 1 AZ)
+#     |_EC2
+###
+
+# vpc starter #
 1. $ aws ec2 create-vpc --cidr-block #.#.#.#/16
 2. $ aws ec2 create-subnet --vpc-id vpc-123 --cidr-block #.#.#.#/24 ### 1
     $ aws ec2 create-subnet --vpc-id vpc-123 --cidr-block #.#.#.#/24 ### 2
