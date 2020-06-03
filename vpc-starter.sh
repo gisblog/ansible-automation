@@ -2,16 +2,16 @@
 # AWS CLOUD
 # |_AWS REGION (eg us-east-1)
 #   |_AZ1 (eg us-east-1a)
-# |_DATA CENTER 1...
+#     |_DATA CENTER 1...
 #   |_AZ2 (eg us-east-1b)
-# |_DATA CENTER 1...
-# |_VPC (can span multiple AZs)
-#   |_ELB
-#   |_INTERNET GATEWAY (to make subnet public)
-#   |_(NAT GATEWAY INSTANCE or SERVICE (ec2 traffic forwarder, self-managed or aws-managed. for private subnet to access internet)
-#   |_ROUTE TABLE
-#   |_SUBNET (must reside in 1 AZ)
-#     |_EC2
+#     |_DATA CENTER 1...
+#       |_VPC (can span multiple AZs)
+#         |_ELB
+#         |_INTERNET GATEWAY (to make subnet public)
+#         |_(NAT GATEWAY INSTANCE or SERVICE (ec2 traffic forwarder in public subnet, self-managed or aws-managed, for private subnet to access internet)
+#         |_ROUTE TABLE
+#         |_SUBNET (must reside in 1 AZ)
+#           |_EC2
 
 # Use Transit Gateway which uses VPC attachment (n-to-1-to-n hub-and-spoke model) to route traffic between VPCs internally (and not over the internet).
 
